@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جامعہ فاطمۃ الزہرا للبنات</title>
+    
+    <!-- Google Fonts for Modern Headings & UI Elements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Jameel Noori Nastaleeq & Noto Nastaliq Web Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/jameel-noori-nastaleeq" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-green: #0A5C36;
+            --dark-green: #05361F;
+            --light-green: #128C54;
+            --mint-white: #F4F9F6;
+            --pure-white: #FFFFFF;
+            --dark-gray: #2D3748;
+            --gold-accent: #FFD700;
+            --gold-dark: #D4AF37;
+            --blue-primary: #0d47a1;
+            --blue-light: #1976d2;
+            --danger-red: #d9534f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Poppins', sans-serif;
+            background-color: var(--mint-white);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            line-height: 2.2;
+        }
+
+        /* --- PREMIUM ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes premiumTextGlow {
+            0% { background-position: 0% 50%; text-shadow: 0 0 10px rgba(255,215,0,0.2); }
+            50% { background-position: 100% 50%; text-shadow: 0 0 25px rgba(255,215,0,0.6), 2px 4px 10px rgba(0,0,0,0.5); }
+            100% { background-position: 0% 50%; text-shadow: 0 0 10px rgba(255,215,0,0.2); }
+        }
+
+        @keyframes timePulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+
+        @keyframes pulseAlert {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- TOP BAR & TIMING LAYOUT --- */
+        .top-bar {
+            background-color: var(--dark-green);
+            color: var(--pure-white);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 2px solid var(--gold-dark);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .top-bar-contacts {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar a {
+            color: var(--pure-white);
+            text-decoration: none;
+            direction: ltr;
+            font-weight: 600;
+        }
+
+        .timing-badge {
+            background: linear-gradient(135deg, #1e4d34, var(--primary-green));
+            border: 1px solid var(--gold-accent);
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: timePulse 2s infinite ease-in-out;
+        }
+
+        .timing-badge span {
+            color: var(--pure-white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--gold-dark);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold-accent));
+            color: var(--dark-green);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            border: 2px solid var(--pure-white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        header:hover .logo-icon {
+            transform: rotate(360deg);
+        }
+
+        .logo-text h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(to right, #FFD700, #FFFFFF, #FFF59D, #FFD700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: premiumTextGlow 4s linear infinite;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text h1 sup {
+            font-family: 'Cairo', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            -webkit-text-fill-color: #ffffff;
+            background: var(--danger-red);
+            padding: 2px 8px;
+            border-radius: 4px;
+            vertical-align: middle;
+            text-shadow: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--pure-white);
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            padding: 6px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--dark-green);
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        /* --- NOTICE BOARD SECTION --- */
+        .notice-board-container {
+            background: #fff;
+            padding: 25px 5%;
+            border-bottom: 3px solid var(--gold-dark);
+        }
+
+        .notice-card {
+    background: linear-gradient(135deg, #ffffff, #fefce8);
+    border: 1px solid #d4af37; /* گولڈن بارڈر */
+    border-right: 8px solid #d4af37; /* دائیں طرف گولڈن پٹی */
+    border-radius: 12px;
+    padding: 25px 35px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* گہرا شیڈو */
+    transition: transform 0.3s ease;
+}
+        }
+
+       .notice-badge {
+    background: #0a5c36;
+    color: #ffd700;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 8px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    border: 1px solid #d4af37;
+}
+       .notice-text {
+    font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+    font-size: 24px;
+    color: #2d3748;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+
+      .notice-date-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    background: #d9534f;
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(217, 83, 79, 0.2);
+}
+/* Notice Board Hover Effect */
+.notice-card {
+    transition: transform 0.3s ease; /* حرکت کو ہموار بنانے کے لیے */
+}
+
+.notice-card:hover {
+    transform: translateY(-5px); /* کرسر لے جانے پر کارڈ ہلکا سا اوپر ہو جائے گا */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* شیڈو گہرا ہو جائے گا */
+}
+
+      /* --- HERO SLIDER --- */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh !important; /* !important lagane se ye zabardasti apply hoga */
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+       .slide {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 20px;
+}
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(5, 54, 31, 0.85), rgba(18, 140, 84, 0.7));
+            z-index: 1;
+        }
+
+      .slide.active { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            color: var(--pure-white);
+            max-width: 900px;
+        }
+
+        .slide.active .slider-main-title { animation: fadeInUp 1s ease forwards; }
+        .slide.active .slider-welcome-text { animation: fadeInUp 1.2s ease forwards; }
+        .slide.active .points-container { animation: zoomIn 1.4s ease forwards; }
+        .slide.active .slider-btn { animation: fadeInUp 1.5s ease forwards; }
+
+        .slider-main-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 45px;
+            font-weight: 900;
+            color: var(--gold-accent);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            opacity: 0;
+        }
+
+        .slider-welcome-text {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+            font-size: 38px;
+            color: #ffffff;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+            opacity: 0;
+        }
+
+        .points-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+            width: 100%;
+            opacity: 0;
+        }
+
+        .orbit-point {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+            font-size: 18px;
+            color: #fff;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .orbit-point:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .slider-btn {
+            background: var(--gold-dark);
+            color: #000;
+            padding: 8px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 30px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+
+        /* --- ABOUT / PRINCIPAL SECTION --- */
+        .principal-section {
+            padding: 60px 10%;
+            background: var(--pure-white);
+        }
+
+        .principal-card {
+            background: var(--mint-white);
+            padding: 40px;
+            border-right: 5px solid var(--primary-green);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .principal-section h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 28px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .principal-quote {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', serif;
+            font-size: 20px;
+            color: var(--dark-gray);
+        }
+
+        /* --- COURSES SECTION --- */
+        .courses-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80px; height: 3px;
+            background: var(--gold-dark);
+        }
+
+        .grid-courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: var(--pure-white);
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 2px dashed var(--gold-dark);
+        }
+
+        .course-card:hover {
+            border-color: var(--primary-green);
+            background-color: var(--mint-white);
+            transform: translateY(-8px);
+        }
+
+        .course-icon {
+            font-size: 38px;
+            color: var(--light-green);
+            margin-bottom: 15px;
+        }
+
+        .course-card h4 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        /* --- EXPANDABLE ACCORDION BOXES --- */
+        .classes-list-box {
+            display: none;
+            grid-column: 1 / -1;
+            background: var(--pure-white);
+            border: 2px solid var(--primary-green);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 10px;
+            text-align: right;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            animation: zoomIn 0.4s ease forwards;
+        }
+
+        .classes-list-box h5 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--gold-dark);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .classes-ul li {
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            font-size: 19px;
+            padding: 10px 15px;
+            border-bottom: 1px solid #edf2f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bracket-class {
+            font-family: 'Poppins', sans-serif;
+            color: #718096;
+            font-weight: 600;
+            background: #e2e8f0;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* --- FACILITIES SECTION --- */
+        .facilities-section {
+            padding: 60px 5%;
+            background: linear-gradient(rgba(18, 140, 84, 0.03), rgba(10, 92, 54, 0.03));
+            text-align: center;
+        }
+
+        .grid-facilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .facility-card {
+            background: var(--pure-white);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border-top: 3px solid var(--light-green);
+        }
+
+        /* --- GALLERY & RESULTS DISPLAY --- */
+        .gallery-redirect-section {
+            padding: 60px 5%;
+            background-color: var(--pure-white);
+            text-align: center;
+        }
+
+        .gallery-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-main-btn {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: var(--pure-white);
+            padding: 12px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 6px 20px rgba(18, 140, 84, 0.3);
+            border: 2px solid var(--gold-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-main-btn.results-btn {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-light));
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+        }
+
+        .gallery-main-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .inner-gallery-display {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--mint-white);
+            border-radius: 15px;
+            border: 2px dashed var(--primary-green);
+            animation: zoomIn 0.5s ease forwards;
+        }
+        
+        .inner-gallery-display.results-theme {
+            border-color: var(--blue-primary);
+        }
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .inner-card {
+            background: var(--pure-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 4px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        
+        .inner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .inner-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .inner-card.result-card img {
+            height: 300px;
+        }
+
+        .inner-caption {
+            padding: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            color: var(--dark-gray);
+            background: var(--pure-white);
+            border-top: 1px solid #eee;
+        }
+
+        /* --- ADMISSION SECTION --- */
+        .admission-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .admission-box {
+            background: var(--pure-white);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px dashed var(--light-green);
+        }
+
+        .btn-main {
+            background: var(--gold-dark);
+            color: #000;
+            padding: 6px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s ease;
+        }
+        
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        
+        .btn-whatsapp:hover {
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* --- FOOTER & CONTACTS --- */
+        .footer-section {
+            background: #111827;
+            color: var(--pure-white);
+            padding: 60px 5% 20px 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-contact h4, .footer-map h4 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item p a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--primary-green);
+            height: 220px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* --- WHATSAPP FLOAT BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .top-bar { flex-direction: column; text-align: center; }
+            .slider-main-title { font-size: 32px !important; }
+            .points-container { grid-template-columns: 1fr; }
+            .gallery-btn-container { flex-direction: column; gap: 15px; }
+            .notice-card { flex-direction: column; text-align: center; }
+        }
+		// Ye script ke andar sab se neeche paste karo
+window.addEventListener('load', function() {
+    function adjustSlider() {
+        let slider = document.querySelector('.slider-wrapper');
+        if (slider) {
+            slider.style.height = window.innerHeight + 'px';
+        }
+    }
+    adjustSlider();
+    window.addEventListener('resize', adjustSlider);
+});
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR WITH UPDATED DETAILS -->
+    <div class="top-bar">
+        <div class="top-bar-contacts">
+            <div><i class="fas fa-envelope"></i> infoqari2760@gmailcom</div>
+         
+       
+        </div>
+        <div class="timing-badge">
+            <i class="fas fa-clock"></i> Closing: <span>01:00 PM</span> | Opening: <span>07:00 AM</span>
+        </div>
+    </div>
+
+    <!-- MAIN APP NAVIGATION HEADER -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon"><i class="fas fa-mosque"></i></div>
+            <div class="logo-text">
+                <h1>جامِعَہ فاطِمَۃُ الزَّہْرَا لِلبَنَاتِ <sup>(رَجِسْٹَرْڈ)</sup></h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">ہوم پیج</a></li>
+                <li><a href="#about">تعارف</a></li>
+                <li><a href="#courses">شعبہ جات</a></li>
+                <li><a href="#facilities">سہولیات</a></li>
+                <li><a href="#gallery">گیلری و نتائج</a></li>
+                <li><a href="#contact">رابطہ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- NEW NOTICE BOARD SECTION -->
+    <div class="notice-board-container">
+        <div class="notice-card">
+            <div class="notice-badge">
+                <i class="fas fa-bell"></i> ضروری اعلان
+            </div>
+            <div class="notice-text">
+                تمام طالبات کو مطلع کیا جاتا ہے کہ جامعہ میں مورخہ 23 مئی سے لے کر 3 جون تک تعطیلات (چھٹیاں) ہوں گی۔ تمام طالبات وقت کی پابندی کے ساتھ مقررہ تاریخ کو جامعہ میں حاضری یقینی بنائیں۔
+            </div>
+            <div class="notice-date-tag">
+              MAY 23 TO JUNE 3 2026
+            </div>
+        </div>
+    </div>
+<!-- AUTOMATIC PIC SLIDER -->
+<section class="slider-wrapper" id="home">
+    <!-- Pehli Tasveer (Updated formatting) -->
+<div class="slide active" style="background-image: url('123.jpg.jpg');">
+    <div class="slide-content">
+        <div class="slider-main-title" style="font-family: 'Jameel Noori Nastaleeq Kasheeda', serif; font-size: 65px;">
+            جامِعَہ فاطِمَۃُ الزَّہْرَا 
+            <span style="font-size: 28px;">(رَجِسْٹَرْڈ)</span>
+        </div>
+    </div>
+</div>
+    <!-- Dusri Tasveer: Hadith -->
+    <div class="slide" style="background-image: url('images (2)_2.jfif.jfif');">
+        <div class="slide-content">
+            <div class="slider-main-title" style="font-family: 'Al Mushaf', serif; font-size: 45px;">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+            <div class="slider-welcome-text" style="font-family: 'Jameel Noori Nastaleeq', serif; font-size: 30px; margin-top: 10px;">ترجمہ: علم حاصل کرنا ہر مسلمان پر فرض ہے۔</div>
+        </div>
+    </div>
+
+    <!-- Teesri Tasveer: New Ayat -->
+  <div class="slide" style="background-image: url('MK.jpg'); background-size: cover; background-position: center;">
+    <div class="slide-content">
+        <div class="slider-main-title" style="font-family: 'Al Mushaf', serif; font-size: 40px;">وَقُل رَّبِّ زِدْنِي عِلْمًا</div>
+        <div class="slider-welcome-text" style="font-family: 'Jameel Noori Nastaleeq', serif; font-size: 28px; margin-top: 10px;">ترجمہ: اور دعا کر کہ اے میرے رب! مجھے اور علم دے۔</div>
+        <a href="#courses" class="slider-btn" style="margin-top: 20px;">تفصیلات دیکھیں</a>
+    </div>
+</div></div>
+</section>
+
+    <!-- MANAGEMENT / PRINCIPAL MESSAGE -->
+    <section class="principal-section reveal" id="about">
+        <div class="principal-card">
+            <h3>زیرِ سرپرستی و پیغامِ پرنسپل</h3>
+            <h4 style="font-weight: bold; color: var(--gold-dark); margin-bottom: 15px;">قاری محمد عبداللہ طاہری (پرنسپل جامعہ)</h4>
+            <p class="principal-quote">
+                ""ہمارا عزم اور اولین مقصد نئی نسل کو علمِ دین کی لازوال دولت سے روشناس کروانا ہے۔ جامعہ فاطمۃ الزہرا میں ناظرہ، حفظِ قرآن اور درسِ نظامی جیسے عظیم الشان کورسز انتہائی اخلاص اور محنت کے ساتھ تجربہ کار اساتذہ کی نگرانی میں کروائے جاتے ہیں۔""
+            </p>
+        </div>
+    </section>
+
+    <!-- COURSES ACCORDION SECTION -->
+    <section class="courses-section reveal" id="courses">
+        <h3 class="section-title">ہمارے اہم شعبہ جات (کورسز)</h3>
+        
+        <div class="grid-courses">
+            <div class="course-card" onclick="toggleCourse('nazirahList', this)">
+                <div class="course-icon"><i class="fas fa-book-open"></i></div>
+                <h4>شعبہ ناظرہ <i class="fas fa-chevron-down arrow-icon" style="font-size: 14px; margin-right: 5px;"></i></h4>
+                <p>تجوید و قواعد کے بنیادی اور پختہ اصولوں کے ساتھ ناظرہ قرآن کریم کی بہترین تعلیم۔</p>
+            </div>
+
+            <div class="course-card" onclick="toggleCourse('hifzList', this)">
+                <div class="course-icon"><i class="fas fa-quran"></i></div>
+                <h4>شعبہ حفظ <i class="fas fa-chevron-down arrow-icon" style="font-size: 14px; margin-right: 5px;"></i></h4>
+                <p>قرآن مجید کو مکمل تجوید، ترتیل اور متبحر اساتذہ کی زیرِ نگرانی حفظ کرنے کا خاص اہتمام。</p>
+            </div>
+
+            <div class="course-card" onclick="toggleCourse('darseNizamiList', this)">
+                <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4>درسِ نظامی (شعبہ خواتین) <i class="fas fa-chevron-down arrow-icon" style="font-size: 14px; margin-right: 5px;"></i></h4>
+                <p>عامہ، خاصہ، عالیہ اور عالمیہ کورسز کی مرحلہ وار مکمل تعلیمی تفصیل۔</p>
+            </div>
+
+            <div class="course-card" onclick="toggleCourse('tafseerList', this)">
+                <div class="course-icon"><i class="fas fa-book-quran"></i></div>
+                <h4>شعبہ تفسیر <i class="fas fa-chevron-down arrow-icon" style="font-size: 14px; margin-right: 5px;"></i></h4>
+                <p>قرآن پاک کے معانی و مفاہیم کو سمجھنے اور فہمِ دین کے لیے خصوصی تخصصی کلاسز。</p>
+            </div>
+
+            <div class="course-card" onclick="toggleCourse('salaiList', this)">
+                <div class="course-icon"><i class="fas fa-scissors"></i></div>
+                <h4>شعبہ سلائی سینٹر <i class="fas fa-chevron-down arrow-icon" style="font-size: 14px; margin-right: 5px;"></i></h4>
+                <p>طالبات کو خود کفیل بنانے کے لیے سلائی کڑھائی اور دستکاری کا بہترین ہنر سکھایا جاتا ہے۔</p>
+            </div>
+
+            <!-- DYNAMIC ACCORDION BOX DROPDOWNS -->
+            <div class="classes-list-box" id="nazirahList">
+                <h5>شعبہ ناظرہ کے اہم تعلیمی پوائنٹس:</h5>
+                <ul class="classes-ul" style="list-style: none; padding: 0;">
+                    <li><span><i class="fas fa-check-circle"></i> قاعدہ یسر القرآن: تجوید کے بنیادی مخارج کی پہچان۔</span></li>
+                    <li><span><i class="fas fa-check-circle"></i> ناظرہ قرآن کریم: مکمل قرآنِ پاک دیکھ کر پڑھنا۔</span></li>
+                </ul>
+            </div>
+
+            <div class="classes-list-box" id="hifzList">
+                <h5>شعبہ حفظِ قرآن کے مراحل:</h5>
+                <ul class="classes-ul" style="list-style: none; padding: 0;">
+                    <li><span><i class="fas fa-check-circle"></i> حفظِ قرآن مجید: تجوید و ترتیل کے ساتھ مکمل قرآن زبانی یاد کرنا۔</span></li>
+                </ul>
+            </div>
+
+            <div class="classes-list-box" id="darseNizamiList">
+                <h5>شعبہ درسِ نظامی کے درجات اور تعلیمی سال:</h5>
+                <ul class="classes-ul" style="list-style: none; padding: 0;">
+                    <li><span><i class="fas fa-graduation-cap"></i> ثانویہ عامہ (میٹرک کے مساوی)</span> <span class="bracket-class">Matric</span></li>
+                    <li><span><i class="fas fa-graduation-cap"></i> ثانویہ خاصہ (ایف اے / انٹرمیڈیٹ کے مساوی)</span> <span class="bracket-class">FA / Intermediate</span></li>
+                    <li><span><i class="fas fa-graduation-cap"></i> عالیہ (بی اے / گریجویشن کے مساوی)</span> <span class="bracket-class">BA / Graduation</span></li>
+                    <li><span><i class="fas fa-graduation-cap"></i> عالمیہ (ایم اے / ماسٹرز کے مساوی)</span> <span class="bracket-class">MA / Masters</span></li>
+                </ul>
+            </div>
+
+            <div class="classes-list-box" id="tafseerList">
+                <h5>شعبہ تفسیرِ قرآن کی تفصیل:</h5>
+                <ul class="classes-ul" style="list-style: none; padding: 0;">
+                    <li><span><i class="fas fa-check-circle"></i> ترجمۃ القرآن: قرآنِ پاک کا باقاعدہ بامحاورہ اردو ترجمہ۔</span></li>
+                </ul>
+            </div>
+
+            <div class="classes-list-box" id="salaiList">
+                <h5>شعبہ سلائی سینٹر کی تفصیلات اور ہنر:</h5>
+                <ul class="classes-ul" style="list-style: none; padding: 0;">
+                    <li><span><i class="fas fa-star"></i> جدید کٹنگ اور سلائی: ہر قسم کے خواتین کے ملبوسات کی کٹنگ اور سلائی کی بنیادی سے ایڈوانس تربیت۔</span></li>
+                    <li><span><i class="fas fa-star"></i> کڑھائی اور دستکاری: روایتی اور جدید ڈیزائننگ اور گھریلو ہنر سکھانا۔</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE FACILITIES BOXES -->
+    <section class="facilities-section reveal" id="facilities">
+        <h3 class="section-title">جامعہ کی طرف سے فراہم کردہ سہولیات</h3>
+       <div class="grid-facilities">
+    <!-- Naya "Free Dakhla" card -->
+    <div class="facility-card">
+        <div class="facility-icon"><i class="fas fa-user-plus"></i></div>
+        <h4>مفت داخلہ (Free Admission)</h4>
+        <p>جامعہ کی طرف سے تمام طالبات کے لیے داخلہ فیس بالکل مفت ہے۔</p>
+    </div>
+
+    <div class="facility-card">
+        <div class="facility-icon"><i class="fas fa-hotel"></i></div>
+        <h4>دارالاقامہ (Hostel)</h4>
+        <p>دور دراز کی طالبات کے لیے پرسکون، محفوظ اور صاف ستھرا رہائشی ہوسٹل۔</p>
+    </div>
+    
+    <div class="facility-card">
+        <div class="facility-icon"><i class="fas fa-book"></i></div>
+        <h4>مفت کتابیں (Free Books)</h4>
+        <p>جامعہ کی طرف سے تمام طالبات کے لیے درسی کتابیں بالکل مفت فراہم کی جاتی ہیں۔</p>
+    </div>
+    
+    <div class="facility-card">
+        <div class="facility-icon"><i class="fas fa-tshirt"></i></div>
+        <h4>یونیفارم / وردی (Uniform)</h4>
+        <p>طالبات کے لیے مخصوص اور باوقار شرعی وردی/یونیفارم کا خاص انتظام۔</p>
+    </div>
+</div>
+    </section>
+
+    <!-- DYNAMIC GALLERY & RESULTS SWITCHER -->
+    <section class="gallery-redirect-section reveal" id="gallery">
+        <h3 class="section-title">جامعہ کی خوبصورت تصاویر اور نتائج گیلری</h3>
+        
+        <div class="gallery-btn-container">
+            <button class="gallery-main-btn" onclick="openGallerySection('photosBox')">
+                <i class="fas fa-images"></i> گیلری دیکھیں
+            </button>
+            <button class="gallery-main-btn results-btn" onclick="openGallerySection('resultsBox')">
+                <i class="fas fa-poll-h"></i> نتائج دیکھیں
+            </button>
+        </div>
+
+        <!-- 20 IMAGE PLACEHOLDERS -->
+        <div id="photosBox" class="inner-gallery-display">
+            <h3 style="font-family: 'Cairo', sans-serif; color: var(--primary-green); margin-bottom: 25px;"><i class="fas fa-images"></i> جامعہ فاطمۃ الزہرا - تصاویر گیلری</h3>
+            <div class="inner-grid">
+                <div class="inner-card">
+                    <img src="pic1.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=500'">
+                    <div class="inner-caption">تصویر نمبر 1</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic2.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500'">
+                    <div class="inner-caption">تصویر نمبر 2</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic3.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1590075865003-e48277faa558?w=500'">
+                    <div class="inner-caption">تصویر نمبر 3</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic4.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500'">
+                    <div class="inner-caption">تصویر نمبر 4</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic5.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500'">
+                    <div class="inner-caption">تصویر نمبر 5</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic6.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=500'">
+                    <div class="inner-caption">تصویر نمبر 6</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic7.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500'">
+                    <div class="inner-caption">تصویر نمبر 7</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic8.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500'">
+                    <div class="inner-caption">تصویر نمبر 8</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic9.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500'">
+                    <div class="inner-caption">تصویر نمبر 9</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic10.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500'">
+                    <div class="inner-caption">تصویر نمبر 10</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic11.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?w=500'">
+                    <div class="inner-caption">تصویر نمبر 11</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic12.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500'">
+                    <div class="inner-caption">تصویر نمبر 12</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic13.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1590075865003-e48277faa558?w=500'">
+                    <div class="inner-caption">تصویر نمبر 13</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic14.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500'">
+                    <div class="inner-caption">تصویر نمبر 14</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic15.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500'">
+                    <div class="inner-caption">تصویر نمبر 15</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic16.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=500'">
+                    <div class="inner-caption">تصویر نمبر 16</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic17.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500'">
+                    <div class="inner-caption">تصویر نمبر 17</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic18.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500'">
+                    <div class="inner-caption">تصویر نمبر 18</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic19.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500'">
+                    <div class="inner-caption">تصویر نمبر 19</div>
+                </div>
+                <div class="inner-card">
+                    <img src="pic20.jpg" alt="Jamia Photo" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500'">
+                    <div class="inner-caption">تصویر نمبر 20</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 EXAMS RESULTS PLACEHOLDERS -->
+        <div id="resultsBox" class="inner-gallery-display results-theme">
+            <h3 style="font-family: 'Cairo', sans-serif; color: var(--blue-primary); margin-bottom: 25px;"><i class="fas fa-poll-h"></i> سالانہ امتحانات کے شاندار نتائج</h3>
+            <div class="inner-grid">
+                <div class="inner-card result-card">
+                    <img src="result1.jpg" alt="Result Board" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500'">
+                    <div class="inner-caption">سالانہ رزلٹ شیٹ 1</div>
+                </div>
+                <div class="inner-card result-card">
+                    <img src="result2.jpg" alt="Result Board" onerror="this.src='https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500'">
+                    <div class="inner-caption">پوزیشن ہولڈرز لسٹ 2</div>
+                </div>
+                <div class="inner-card result-card">
+                    <img src="result3.jpg" alt="Result Board" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500'">
+                    <div class="inner-caption">تنظیم المدارس امتحانی رزلٹ 3</div>
+                </div>
+                <div class="inner-card result-card">
+                    <img src="result4.jpg" alt="Result Board" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500'">
+                    <div class="inner-caption">کلاس وائز پوزیشنز 4</div>
+                </div>
+                <div class="inner-card result-card">
+                    <img src="result5.jpg" alt="Result Board" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500'">
+                    <div class="inner-caption">خصوصی اعزازات لسٹ 5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section style="text-align: center; padding: 60px 5%; background: #ffffff;">
+    <h3 class="section-title">ہم سے رابطہ کریں</h3>
+    
+    <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
+        <a href="tel:03082121777" style="padding: 12px 25px; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
+            سم پر رابطہ کریں
+        </a>
+    </div>
+
+    <form id="whatsapp-form" onsubmit="sendToWhatsApp(event)" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" id="user-name" placeholder="آپ کا نام" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+       <select id="user-country" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; width: 100%; margin-bottom: 15px;">
+    <option value="" disabled selected>اپنا ملک منتخب کریں</option>
+    <option value="پاکستان">پاکستان</option>
+    <option value="سعودی عرب">سعودی عرب</option>
+    <option value="متحدہ عرب امارات">متحدہ عرب امارات</option>
+    <option value="برطانیہ">برطانیہ</option>
+    <option value="امریکہ">امریکہ</option>
+    <option value="کینیڈا">کینیڈا</option>
+    </select>
+<input type="text" id="user-city" placeholder="گاؤں یا شہر کا نام" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; width: 100%; margin-bottom: 15px;">
+<select id="user-district" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; width: 100%; margin-bottom: 15px;">
+    <option value="" disabled selected>ضلع منتخب کریں</option>
+    <option value="گوجرانوالہ">گوجرانوالہ</option>
+    <option value="شیخوپورہ">شیخوپورہ</option>
+    <option value="لاہور">لاہور</option>
+    <option value="حافظ آباد">حافظ آباد</option>
+    <option value="سیالکوٹ">سیالکوٹ</option>
+    <option value="گجرات">گجرات</option>
+    <option value="منڈی بہاؤالدین">منڈی بہاؤالدین</option>
+    <option value="نارووال">نارووال</option>
+    <option value="فیصل آباد">فیصل آباد</option>
+    <option value="ننکانہ صاحب">ننکانہ صاحب</option>
+    <option value="قصور">قصور</option>
+    <option value="سرگودھا">سرگودھا</option>
+    <option value="خوشاب">خوشاب</option>
+    <option value="میانوالی">میانوالی</option>
+    <option value="بھکر">بھکر</option>
+    <option value="ملتان">ملتان</option>
+    <option value="ساہیوال">ساہیوال</option>
+    <option value="اوکاڑہ">اوکاڑہ</option>
+    <option value="پاکپتن">پاکپتن</option>
+    <option value="وہاڑی">وہاڑی</option>
+</select>
+		<textarea id="user-message" placeholder="اپنا پیغام یہاں لکھیں" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 120px;"></textarea>
+        <button type="submit" style="padding: 12px; background: #000; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">واٹس ایپ پر پیغام بھیجیں</button>
+    </form>
+</section>
+
+<script>
+    function sendToWhatsApp(event) {
+        event.preventDefault(); 
+
+        var name = document.getElementById('user-name').value;
+        var city = document.getElementById('user-city').value;
+        var message = document.getElementById('user-message').value;
+        var phoneNumber = "923082121777"; 
+
+        var url = "https://wa.me/" + phoneNumber + "?text=" + 
+                  "نام: " + name + "%0A" + 
+                  "شہر: " + city + "%0A" + 
+                  "پیغام: " + message;
+
+        window.open(url, '_blank');
+    }
+</script>
+    <!-- FOOTER WITH GOOGLE MAP EMBED -->
+    <footer class="footer-section" id="contact">
+        <div class="footer-grid">
+           <div class="footer-contact">
+    <h4>جامعہ سے رابطہ کریں</h4>
+    <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>ای میل: <a href="mailto:hassn1122jas@gmail.com">qari2760@gmail.com</a></p>
+    </div>
+    <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>شیخوپورہ روڈ، قلعہ مصطفیٰ آباد، ڈاکخانہ تتلے عالی، تحصیل نوشہرہ ورکاں، ضلع گوجرانوالہ。</p>
+    </div>
+    
+        
+       
+    </div>
+</div>
+
+            <div class="footer-map">
+                <h4>جامعہ کی لوکیشن</h4>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13545.987654321!2d74.1234567!3d32.0123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f000000000000%3A0x0!2sJamia%20Masjid%20Bahar-e-Madina!5e0!3m2!1sur!2spk!4v1710000000000!5m2!1sur!2spk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 جامعہ فاطمۃ الزہرا۔ تمام حقوق محفوظ ہیں۔</p>
+        </div>
+	
+
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script type="text/javascript">
+    (function() {
+        // Apni Public Key yahan verify kar len
+        emailjs.init("XpPqczemxCdGnF5-g");
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        emailjs.sendForm('service_xrnx8ue', 'template_se3i3il', this)
+            .then(function() {
+                // Sirf ye alert aayega
+                alert('آپ کا پیغام کامیابی سے بھیج دیا گیا ہے!');
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                // Agar sach mein koi technical masla ho tab hi yahan jaye ga
+                alert('معذرت، کوئی تکنیکی مسئلہ پیش آیا، براہ کرم بعد میں کوشش کریں۔');
+                console.log('FAILED...', error);
+            });
+    });
+</script>
+    </footer>
+
+    <!-- STICKY FLOATING WHATSAPP INTERACTION BUTTON -->
+    <a href="https://wa.me/923082121777?text=السلام%20علیکم!" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ENGINE SCRIPTS FOR CONTROLS -->
+    <script>
+        function revealSections() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", revealSections);
+        window.addEventListener("DOMContentLoaded", revealSections);
+
+        function toggleCourse(boxId, cardElement) {
+            var targetBox = document.getElementById(boxId);
+            var currentArrow = cardElement.querySelector('.arrow-icon');
+            var isCurrentlyOpen = (targetBox.style.display === "block");
+            
+            document.querySelectorAll('.classes-list-box').forEach(function(box) { box.style.display = "none"; });
+            document.querySelectorAll('.arrow-icon').forEach(function(arrow) { arrow.className = "fas fa-chevron-down arrow-icon"; });
+
+            if (!isCurrentlyOpen) {
+                targetBox.style.display = "block";
+                currentArrow.className = "fas fa-chevron-up arrow-icon";
+            }
+        }
+
+        function openGallerySection(targetId) {
+            var targetDisplayBox = document.getElementById(targetId);
+            var isOpen = (targetDisplayBox.style.display === "block");
+
+            document.querySelectorAll('.inner-gallery-display').forEach(function(box) {
+                box.style.display = "none";
+            });
+
+            if (!isOpen) {
+                targetDisplayBox.style.display = "block";
+                setTimeout(() => {
+                    targetDisplayBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+    </script>
+	<script>
+function sendToWhatsApp(event) {
+    event.preventDefault(); // Page ko refresh hone se roke ga
+
+    var name = document.getElementById('user-name').value;
+    var city = document.getElementById('user-city').value;
+    var message = document.getElementById('user-message').value;
+
+    // Yahan apna WhatsApp number likhen (0308... ki jagah)
+    var phoneNumber = "923082121777"; 
+
+    var url = "https://wa.me/" + phoneNumber + "?text=" + 
+              "نام: " + name + "%0A" + 
+              "شہر: " + city + "%0A" + 
+              "پیغام: " + message;
+
+    window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
