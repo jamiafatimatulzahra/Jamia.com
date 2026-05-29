@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-	<meta name="google-site-verification" content="w-w1dONYPGXh6ZdF9-WLBFssWlcMmqS9QzBOqPuhiFY" />
+<!-- SEO Keywords and Description with Location -->
+<meta name="description" content="Jamia Fatimatul Zahra, located at Shekhupura Road, Qila Mustafa Abad, Tatlay Aali. Providing quality Islamic and modern education for girls.">
+<meta name="keywords" content="Jamia Fatimatul Zahra, Islamic School Tatlay Aali, Girls Education Shekhupura Road, Qila Mustafa Abad Schools, Taleem, Work Wild">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جامعہ فاطمۃ الزہرا للبنات</title>
-    
+    <!-- Meta Tags for SEO -->
+<meta name="description" content="Jamia Fatimatul Zahra - Behtareen islami aur dunyawi taleem ka markaz. Hum bachiyon ki behtar mustaqbil ke liye quality education faraham karte hain.">
+<meta name="keywords" content="Jamia Fatimatul Zahra, Islamic School, Girls Education, Taleem, [Aapke Area ka Naam]">
+<meta name="author" content="Work Wild">
     <!-- Google Fonts for Modern Headings & UI Elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1318,6 +1323,24 @@ function sendToWhatsApp(event) {
 
     window.open(url, '_blank');
 }
+</script>
+<script>
+  fetch('https://script.google.com/macros/s/AKfycbz9t6KdA45n7_DEuAA7-znEruRhgqSrO3YK1bUk7XqeFDr2wUOhKmUGxCCyQ5_W77wVnw/exec')
+    .then(response => response.json())
+    .then(data => {
+      const galleryGrid = document.querySelector('.inner-grid');
+      galleryGrid.innerHTML = ''; 
+      data.forEach(item => {
+        const card = `
+          <div class="inner-card">
+            <img src="${item.url}" alt="Gallery Image">
+            <div class="inner-caption">${item.caption}</div>
+          </div>
+        `;
+        galleryGrid.innerHTML += card;
+      });
+    })
+    .catch(error => console.error('Error:', error));
 </script>
 </body>
 </html>
