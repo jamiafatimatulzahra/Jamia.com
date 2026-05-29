@@ -1324,23 +1324,5 @@ function sendToWhatsApp(event) {
     window.open(url, '_blank');
 }
 </script>
-<script>
-  fetch('https://script.google.com/macros/s/AKfycbz9t6KdA45n7_DEuAA7-znEruRhgqSrO3YK1bUk7XqeFDr2wUOhKmUGxCCyQ5_W77wVnw/exec')
-    .then(response => response.json())
-    .then(data => {
-      const galleryGrid = document.querySelector('.inner-grid');
-      galleryGrid.innerHTML = ''; 
-      data.forEach(item => {
-        const card = `
-          <div class="inner-card">
-            <img src="${item.url}" alt="Gallery Image">
-            <div class="inner-caption">${item.caption}</div>
-          </div>
-        `;
-        galleryGrid.innerHTML += card;
-      });
-    })
-    .catch(error => console.error('Error:', error));
-</script>
 </body>
 </html>
